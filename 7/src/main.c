@@ -28,12 +28,6 @@ _xt_isr_unmask(1 << ETS_GPIO_INUM)
  #define ETS_GPIO_INTR_DISABLE() \
 _xt_isr_mask(1 << ETS_GPIO_INUM)
 
-int armed (fsm_t* );
-void led_on (fsm_t* );
-void led_off (fsm_t*);
-int presence(fsm_t*);
-int disarm(fsm_t*);
-
 void isr_gpio(void* arg) {
  static portTickType xLastISRTick0 = 0;
  uint32 status = GPIO_REG_READ(GPIO_STATUS_ADDRESS);
